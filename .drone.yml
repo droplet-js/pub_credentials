@@ -10,9 +10,4 @@ steps:
     ENC_PASSWORD:
       from_secret: ENC_PASSWORD
   commands:
-  - openssl enc -d -$ENC_METHOD -k $ENC_PASSWORD -in credentials.json.enc -out credentials.json # 解密
-
-- name: verify
-  image: alpine:3.9.3
-  commands:
-  - if [[ `cat credentials.json` == *accessToken* ]]; then echo "found"; else echo "no found" && exit 1; fi
+  - openssl enc -d -$ENC_METHOD -k $ENC_PASSWORD -in credentials.json.enc -out credentials.json
