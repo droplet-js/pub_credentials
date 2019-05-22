@@ -1,0 +1,22 @@
+kind: pipeline
+name: default
+
+steps:
+- name: openssl
+  image: v7lin/openssl:1.1.1b
+  environment:
+    ENC_METHOD:
+      from_secret: ENC_METHOD
+    ENC_PASSWORD:
+      from_secret: ENC_PASSWORD
+  commands:
+  - openssl enc -d -$ENC_METHOD -k $ENC_PASSWORD -in credentials.json.enc -out credentials.json # 解密
+
+- name: verify
+  image:
+  commands:
+  - if [[ `cat credentials.json` == *accessToken* ]]; then echo "found"; else echo "no found" && exit 1; fi
+
+trigger:
+  event:
+  - tag
