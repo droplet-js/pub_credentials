@@ -1,4 +1,4 @@
-# pub_cert
+# pub_credentials
 
 [![Build Status](https://cloud.drone.io/api/badges/v7lin/pub_credentials/status.svg)](https://cloud.drone.io/v7lin/pub_credentials)
 
