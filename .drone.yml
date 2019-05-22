@@ -16,7 +16,3 @@ steps:
   image: alpine:3.9.3
   commands:
   - if [[ `cat credentials.json` == *accessToken* ]]; then echo "found"; else echo "no found" && exit 1; fi
-
-trigger:
-  event:
-  - tag
