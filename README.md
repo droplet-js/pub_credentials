@@ -2,6 +2,10 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/v7lin/pub_credentials/status.svg)](https://cloud.drone.io/v7lin/pub_credentials)
 
+### 目的
+
+* 为了解决无法在CI/CD工具上直接使用flutter/dart发布packages
+
 ### 加密
 
 ````
